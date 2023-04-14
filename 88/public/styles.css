@@ -1,0 +1,55 @@
+/* CSS file for MongoDB User Form */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F9F9F9;
+    color: #333;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0069d9;
+  }
+  

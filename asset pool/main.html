@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Contract</title>
+</head>
+<body>
+    <button id="connect">Connect to MetaMask</button>
+    <button id="deposit">Deposit to Contract</button>
+    <button id="withdraw">Withdraw from Contract</button>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+    <script>
+        const contractABI = [
+	{
+		"inputs": [],
+		"name": "deposit",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "recipient",
+				"type": "address"
+			}
+		],
+		"name": "depositTo",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "balance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getBalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+        const contractAddress = '0xaA7E26026eDcbbF8885c215a6ED80Df8eA995c7C';
+        let web3, contract, userAddress;
+
+        async function init() {
+            if (typeof window.ethereum !== 'undefined') {
+                web3 = new Web3(window.ethereum);
+                contract = new web3.eth.Contract(contractABI, contractAddress);
+            } else {
+                alert('Please install MetaMask to use this dApp.');
+            }
+        }
+
+        document.getElementById('connect').addEventListener('click', async () => {
+            if (!web3) {
+                return;
+            }
+            try {
+                const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                userAddress = accounts[0];
+                console.log('Connected address:', userAddress);
+            } catch (error) {
+                console.error('Error connecting to MetaMask:', error);
+            }
+        });
+
+        document.getElementById('deposit').addEventListener('click', async () => {
+            if (!userAddress) {
+                alert('Please connect to MetaMask first.');
+                return;
+            }
+
+            const amount = web3.utils.toWei('0.1', 'ether'); // Change the amount as needed
+            try {
+                await contract.methods.deposit().send({ from: userAddress, value: amount });
+                console.log('Deposit successful');
+            } catch (error) {
+                console.error('Error depositing:', error);
+            }
+        });
+
+        document.getElementById('withdraw').addEventListener('click', async () => {
+            if (!userAddress) {
+                alert('Please connect to MetaMask first.');
+                return;
+            }
+
+            const amount = web3.utils.toWei('0.1', 'ether'); // Change the amount as needed
+            try {
+                await contract.methods.withdraw(amount).send({ from: userAddress });
+                console.log('Withdraw successful');
+            } catch (error) {
+                console.error('Error withdrawing:', error);
+            }
+        });
+
+        init();
+    </script>
+</body>
+</html>

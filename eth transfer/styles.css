@@ -1,0 +1,52 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0f0f0f;
+    color: #0aff84;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    background-color: #0f0f0f;
+    color: #0aff84;
+    border: 2px solid #0aff84;
+    padding: 5px 10px;
+    outline: none;
+}
+
+button {
+    background-color: #0f0f0f;
+    color: #0aff84;
+    border: 2px solid #0aff84;
+    padding: 5px 15px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background-color: #0aff84;
+    color: #0f0f0f;
+}
+
+button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0aff84;
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: all 0.3s ease;
+}
+
+button:hover:before {
+    transform: translateY(0);
+}
