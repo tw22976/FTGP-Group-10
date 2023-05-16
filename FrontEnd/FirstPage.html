@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Website</title>
+    <style>
+      header {
+        position: relative;
+      }
+    </style>
+    <link rel="stylesheet" href="FirstPage.css" />
+  </head>
+
+  <body>
+    <header>
+      <div id="header_div">
+        <h1 id="name">Hello World</h1>
+        <button id="Connect">Connect Metatask</button>
+        <span id="ConnectedText" style="display: none"></span>
+        <button id="profile" style="display: none">Profile</button>
+      </div>
+    </header>
+
+    <div class="container">
+      <button type="submit" class="btn" onclick="OpenLend()">LEND</button>
+      <button
+        type="submit"
+        class="btn_b"
+        id="borrow_button"
+        onclick="OpenBorrow()"
+      >
+        BORROW
+      </button>
+      <div class="popup" id="popup">
+        <div class="input-container">
+          <label for="lend_amount">ETH TO LEND :</label>
+          <input type="number" id="lend_amount" />ETH<br />
+        </div>
+        <br />
+        <div class="input-wei">
+          <input type="number" id="wei" readonly disabled />WEI
+        </div>
+        <button type="submit" class="button" id="lend_eth">LEND</button>
+      </div>
+
+      <div class="popup_b" id="popup_b">
+        <div class="input-container_b">
+          <label for="lend_borrow">ETH TO BORROW:</label>
+          <input type="number" id="borrow_eth_amount" />ETH<br />
+        </div>
+        <br />
+        <div class="input-wei_b">
+          <input type="number" id="borrow_wei" readonly disabled />WEI
+        </div>
+        <div>
+          <label for="borrow_rep_use">COLLATERAL PERCENTAGE:</label>
+          <input
+            type="range"
+            id="borrow_rep_use"
+            min="90"
+            max="110"
+            value="0"
+            oninput="updateSliderValue(this.value)"
+          />
+          <span id="sliderValue">90%</span>
+        </div>
+        <button type="submit" class="button_b" id="borrow_eth">BORROW</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+    <script>
+      const popup_b = document.getElementById("popup_b");
+      const sliderValueElement = document.getElementById("sliderValue");
+
+      function OpenBorrow() {
+        popup_b.classList.add("open_popup_b");
+      }
+
+      function updateSliderValue(value) {
+        sliderValueElement.textContent = value + "%";
+      }
+      const popup = document.getElementById("popup");
+      const borrow_button = document.getElementById("borrow_button");
+      function OpenLend() {
+        popup.classList.add("open_popup");
+        // borrow_button.style.display = "none";
+      }
+    </script>
+    <script type="module" src="FirstPage.js"></script>
+  </body>
+</html>

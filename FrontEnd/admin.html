@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin</title>
+    <style>
+      body {
+        background-image: url("Assets/background3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      header {
+        position: relative;
+      }
+    </style>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+
+  <body>
+
+    <div>
+      <ul id = 'admin'>
+        <li id="pool_size"></li>
+        <li id = 'total_borrowed'></li>
+        <li id="total_deposit"></li>
+        <li id="total_collateral"></li>
+        <li id="profits"></li>
+        <li id="base_int"></li>
+      </ul>
+      <br>
+      <button id="get_profit"> Get Profits </button>
+
+    </div>
+
+  </body>
+
+    <!-- Add more HTML content here -->
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+    <script type="module" src="admin.js"></script>
+  </body>
+</html>

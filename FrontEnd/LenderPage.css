@@ -1,0 +1,75 @@
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("Assets/background3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  position: relative;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+#ConnectedText {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+#lender_profile_list {
+  margin-top: 10px;
+  margin-left: 700px;
+  color: #ffffff;
+  list-style-type: none;
+  padding: 0;
+}
+
+#lender_profile_list li {
+  margin-bottom: 10px;
+}
+
+#lender_withdraw_interest {
+  margin-top: 10px;
+  margin-left: 650px;
+  font-size: 18px;
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #9306c2;
+  color: #ffffff;
+  text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+#lender_withdraw_interest:hover {
+  background-color: #e69bff;
+  cursor: pointer;
+}
+
+#processingAlert {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.modal-content {
+  outline: 2px solid #000;
+  outline-offset: 10px;
+}
+
+/* Add more styles for the rest of your HTML content here */

@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.container_b {
+  width: 100%;
+  height: 100vh;
+  background-color: brown;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_b {
+  padding: 10px 60px;
+  border-radius: 30px;
+  font-size: 22px;
+  border: none;
+}
+
+.button_b {
+  padding: 10px 60px;
+  border-radius: 30px;
+  font-size: 14px;
+  border: none;
+}
+
+.popup_b {
+  width: 600px;
+  height: 300px;
+  background: gray;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  display: flex; /* Add this line */
+  flex-direction: column; /* Add this line */
+  justify-content: center; /* This line now works on the vertical axis due to 'flex-direction: column' */
+  align-items: center;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open_popup_b {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup_b button {
+  cursor: pointer;
+}
+
+.input-container_b {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+#lend_eth_b {
+  width: 150px;
+  height: 22px;
+}
+
+.input-wei {
+  display: flex;
+  justify-content: left;
+
+  gap: 10px;
+  position: relative;
+  top: -10px;
+  left: 70px;
+  font-size: 20px;
+}
+
+/* test.css */
+
+/* Styles for the slider */
+
+/* Styles for the slider value */

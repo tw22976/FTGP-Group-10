@@ -1,0 +1,16 @@
+h1 {
+  color: #ffffff;
+}
+
+#borrower_profile_list {
+  color: white;
+}
+
+body {
+  background-image: url("Assets/background3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header {
+  position: relative;
+}
