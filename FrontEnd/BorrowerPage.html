@@ -3,25 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <title>Borrower's Page</title>
-    <h1 id="heading ">Borrower Profile</h1>
     <link rel="stylesheet" href="BorrowerPage.css" />
   </head>
   <body>
+    <div>
+      <img src="Assets/dd-logo.png" class="image" />
+      <h1 id="name">DeFiDuo</h1>
+      <h2 id="page">Borrowing Profile</h2>
+      <span id="user_info"></span>
+      <button id="lending" style="display: none">Lending Profile</button>
+    </div>
     <ul id="borrower_profile_list">
       <li id="item1_b"></li>
       <li id="item2_b"></li>
       <li id="item3_b"></li>
-      <li id="item4_b"></li>
     </ul>
+    <div class="con_add">
+      <span id="owner"></span>
+      <span id="con_info"></span>
+    </div>
     <br />
     <button id="pay_int">Pay Interest</button>
     <br />
-    <button id="pay_both">Pay Both</button>
+    <p id="note_int">
+      (The payable interest will be sligthly more<br />
+      due to the time difference)
+    </p>
+    <button id="pay_both">Clear Loan</button>
     <div id="processingAlert" style="display: none">
-      <p>Processing...</p>
+      <p>PROCESSING...</p>
     </div>
 
+    <span id="loan_info"></span>
+
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+    <script>
+      document
+        .getElementById("pay_both")
+        .addEventListener("clicl", function () {
+          console.log("yooooooo");
+        });
+    </script>
     <script type="module" src="BorrowerPage.js"></script>
   </body>
 </html>

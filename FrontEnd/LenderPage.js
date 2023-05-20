@@ -38,10 +38,16 @@ window.onload = async function () {
     const lenderInterest = await contract.methods
       .lendersInterest()
       .call({ from: userAddress });
-    const a_interest = lenderInterest + user_data[1][2];
+    const a_interest = parseInt(lenderInterest) + parseInt(user_data[1][2]);
     const firstFourChars = userAddress.substring(0, 4);
     const lastFourChars = userAddress.substring(userAddress.length - 4);
 
+    if (user_data[0][0] != parseInt(0)) {
+      document.getElementById("borrowing").style.display = "block";
+    }
+    const base_int = await contract.methods
+      .calculateInterestRate()
+      .call({ from: userAddress });
     console.log(userAddress);
     document.getElementById("ConnectedText").innerHTML =
       "Your address: " +
@@ -53,13 +59,23 @@ window.onload = async function () {
       user_data[2] / multiplier;
 
     document.getElementById("item1").textContent =
-      "ETH lent to the platform: " + user_data[1][0] / multiplier + " ETH";
+      "ETH lent to the platform: " +
+      parseInt(user_data[1][0]) / multiplier +
+      " ETH";
     document.getElementById("item2").textContent =
-      "Accrued Interest: " + a_interest / multiplier + " ETH";
+      "Accrued Interest: " + parseInt(a_interest) / multiplier + " ETH";
+    document.getElementById("item3").textContent =
+      "Current Interest Rate: " + base_int / 100 + "%";
   } catch (error) {
     console.log(error);
   }
 };
+
+//Borrowing Profile
+
+document.getElementById("borrowing").addEventListener("click", function () {
+  window.location.href = "./BorrowerPage.html";
+});
 
 // WITHDRAW INT
 
@@ -127,14 +143,26 @@ document
     const userAddress = accounts[0];
 
     try {
-      // Display processing alert
+      const transaction = contract.methods
+        .lenderWithdrawPrincipal(amount * multiplier)
+        .send({ from: userAddress });
+
       const processingAlert = document.getElementById("processingAlert");
       processingAlert.style.display = "block";
 
-      const interest = await contract.methods
-        .lenderWithdrawPrincipal(amount * multiplier)
-        .send({ from: userAddress });
-      console.log(interest); // handle success
+      // Listen for the transaction confirmation
+      transaction
+        .on("confirmation", (confirmationNumber, receipt) => {
+          console.log("Transaction confirmed:", receipt);
+        })
+        .on("error", (error) => {
+          console.log("Transaction error:", error);
+          // Hide processing alert on error
+          processingAlert.style.display = "none";
+        });
+
+      // Wait for the transaction to be mined
+      await transaction;
 
       // Hide processing alert
       processingAlert.style.display = "none";
@@ -158,24 +186,41 @@ document
     });
     const userAddress = accounts[0];
     try {
-      // Display processing alert
+      const transaction = contract.methods
+        .lenderWithdrawBoth()
+        .send({ from: userAddress });
+
       const processingAlert = document.getElementById("processingAlert");
       processingAlert.style.display = "block";
 
-      const interest = await contract.methods
-        .lenderWithdrawBoth()
-        .send({ from: userAddress });
-      console.log(interest); // handle success
+      // Listen for the transaction confirmation
+      transaction
+        .on("confirmation", (confirmationNumber, receipt) => {
+          console.log("Transaction confirmed:", receipt);
+        })
+        .on("error", (error) => {
+          console.log("Transaction error:", error);
+          // Hide processing alert on error
+          processingAlert.style.display = "none";
+        });
+
+      // Wait for the transaction to be mined
+      await transaction;
 
       // Hide processing alert
       processingAlert.style.display = "none";
       alert("Transaction completed!");
-
-      // Reload the page
       window.location.href = "./FirstPage.html";
     } catch (error) {
       console.log(error);
     }
   });
+
+// CONTRACT INFO
+
+document.getElementById("owner").innerHTML =
+  "OWNER: 0xB2e8a15dFD0EFBd022825DA12Fd061b858f19CD3 Change ";
+document.getElementById("con_info").innerHTML =
+  "CONTRACT ADDRESS: 0xB2e8a15dFD0EFBd022825DA12Fd061b858f19CD3";
 
 init();
