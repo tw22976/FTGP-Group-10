@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lender's Page</title>
+
+    <link rel="stylesheet" href="LenderPage.css" />
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <img src="Assets/dd-logo.png" class="image" />
+        <h1 id="name">DeFiDuo</h1>
+        <h2 id="page">Lending Profile</h2>
+        <span id="ConnectedText"></span>
+        <button id="borrowing" style="display: none">Borrowing Profile</button>
+      </div>
+    </header>
+    <ul id="lender_profile_list">
+      <li id="item1"></li>
+      <li id="item2"></li>
+      <li id="item3"></li>
+    </ul>
+
+    <div class="con_add">
+      <span id="owner"></span>
+      <span id="con_info"></span>
+    </div>
+    <div class="btn" id="btn">
+      <button id="lender_withdraw_interest">Withdraw Interest</button><br />
+      <button id="withdraw_amt_button">Withdraw ETH</button><br /><br />
+      <button id="lender_withdraw_both">Full Payout</button><br />
+    </div>
+
+    <!-- Add more HTML content here -->
+
+    <div id="processingAlert" style="display: none">
+      <p>PROCESSING...</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+    <script type="module" src="LenderPage.js"></script>
+  </body>
+</html>

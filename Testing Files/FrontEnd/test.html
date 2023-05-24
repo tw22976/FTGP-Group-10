@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pop Up</title>
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body>
+    <div class="container_b">
+      <button type="submit" class="btn_b" onclick="OpenLend()">BORROW</button>
+      <div class="popup_b" id="popup_b">
+        <div class="input-container_b">
+          <label for="lend_eth">ETH TO BORROW:</label>
+          <input type="number" id="borrow_eth" />ETH<br />
+        </div>
+        <br />
+        <div class="input-wei_b">
+          <input type="number" id="borrow_wei" readonly disabled />WEI
+        </div>
+        <div>
+          <label for="slider">COLLATERAL PERCENTAGE:</label>
+
+          <input
+            type="range"
+            id="slider"
+            min="90"
+            max="110"
+            value="0"
+            oninput="updateSliderValue(this.value)"
+          />
+          <span id="sliderValue">90%</span>
+        </div>
+        <button type="submit" class="button_b">BORROW</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    const popup = document.getElementById("popup_b");
+    const sliderValueElement = document.getElementById("sliderValue");
+
+    function OpenLend() {
+      popup.classList.add("open_popup_b");
+    }
+
+    function updateSliderValue(value) {
+      sliderValueElement.textContent = value + "%";
+    }
+  </script>
+</html>

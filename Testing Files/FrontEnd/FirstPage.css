@@ -1,0 +1,467 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 520;
+}
+
+header {
+  position: relative;
+}
+
+.image {
+  width: 6%;
+  height: auto;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.container {
+  width: 100%;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 60px;
+  border-radius: 30px;
+  font-size: 30px;
+  border: none;
+  top: 45%;
+  left: 35%;
+  position: absolute;
+  cursor: pointer;
+  background-color: white;
+  color: #9306c2;
+}
+.btn:hover {
+  background-color: #e69bff;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.92);
+}
+
+.button {
+  padding: 10px 60px;
+  border-radius: 30px;
+  font-size: 16px;
+  border: none;
+  color: white;
+  background-color: #cc65d7;
+}
+
+.popup {
+  width: 600px;
+  height: 300px;
+  background: rgb(247, 235, 255);
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  display: flex; /* Add this line */
+  flex-direction: column; /* Add this line */
+  justify-content: center; /* This line now works on the vertical axis due to 'flex-direction: column' */
+  align-items: center;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open_popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.close_popup {
+  visibility: hidden;
+}
+
+.popup button {
+  cursor: pointer;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+#lend_amount {
+  width: 167px;
+  height: 25px;
+  font-size: 16px;
+}
+
+.input-wei {
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+  position: relative;
+  top: -19px;
+  left: -8px;
+  font-size: 20px;
+  width: 10px;
+}
+
+.container_b {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_b {
+  padding: 10px 60px;
+  border-radius: 30px;
+  font-size: 30px;
+  border: none;
+  position: absolute;
+  top: 45%;
+  left: 52%;
+  cursor: pointer;
+  background-color: white;
+  color: #9306c2;
+}
+.btn_b:hover {
+  background-color: #e69bff;
+  color: white;
+  cursor: pointer;
+}
+
+.btn_b:active {
+  transform: scale(0.92);
+}
+
+.button_b {
+  padding: 10px 60px;
+  border-radius: 30px;
+  font-size: 16px;
+  border: none;
+  color: white;
+  background-color: #cc65d7;
+  position: relative;
+  top: 4px;
+  left: -56px;
+}
+
+button#close_b {
+  position: absolute;
+  top: 85%;
+  left: 73%;
+}
+
+.popup_b {
+  width: 720px;
+  height: 360px;
+  background: rgb(247, 235, 255);
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  display: flex; /* Add this line */
+  flex-direction: column; /* Add this line */
+  justify-content: center; /* This line now works on the vertical axis due to 'flex-direction: column' */
+  align-items: center;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open_popup_b {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup_b button {
+  cursor: pointer;
+}
+
+.close_popup_b {
+  visibility: hidden;
+}
+
+.input-container_b {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+#lend_eth_b {
+  width: 150px;
+  height: 22px;
+}
+
+.input-wei_b {
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+  position: relative;
+  top: -16px;
+  left: 112px;
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("Assets/background3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* Add this property to fix the background image */
+}
+
+/* Header styles */
+#header_div {
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+}
+
+#name {
+  font-size: 60px;
+  color: #ffffff;
+  margin: 0;
+  position: absolute;
+  top: 35px;
+  left: 140px;
+}
+
+#Connect {
+  font-size: 30px;
+  width: 300px;
+  height: 75px;
+  border-radius: 60px;
+  background-color: white;
+  color: #9306c2;
+  padding: 10px 10px;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  right: 35px;
+  top: 35px;
+}
+
+#Connect:hover {
+  background-color: #e69bff;
+  color: white;
+  cursor: pointer;
+}
+
+#Connect:active {
+  transform: scale(0.92);
+}
+
+#ConnectedText {
+  font-size: 27px;
+  color: #ffffff;
+  position: absolute;
+  right: 42px;
+  top: 105px;
+}
+
+#profile {
+  font-size: 28px;
+  width: 210px;
+  height: 58px;
+  border-radius: 30px;
+  background-color: white;
+  color: #9306c2;
+  text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  line-height: 20px;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  right: 35px;
+  top: 35px;
+}
+
+#profile:hover {
+  background-color: #e69bff;
+  color: white;
+  cursor: pointer;
+}
+
+#profile:active {
+  transform: scale(0.92);
+}
+
+#lend_amt {
+  width: 10%;
+  box-sizing: border-box;
+  margin-top: 400px;
+  margin-left: 600px;
+}
+
+#data {
+  margin-top: 200px;
+  position: relative;
+}
+
+#lender_profile_list {
+  margin-top: 10px;
+  margin-left: 700px;
+  color: #ffffff;
+}
+
+#borrower {
+  margin-top: 100px;
+  margin-left: 600px;
+}
+
+#borrow_rep_use {
+  margin-top: 10px;
+}
+
+#borrow_eth {
+  margin-top: 10px;
+  margin-left: 150px;
+}
+
+#pay_both {
+  margin-top: 10px;
+}
+
+#base_int {
+  position: absolute;
+  top: 52%;
+  left: 38%;
+  color: white;
+  font-size: 24px;
+}
+
+#b_base {
+  position: absolute;
+  top: 52%;
+  left: 56%;
+  color: white;
+  font-size: 24px;
+}
+
+#note {
+  position: absolute;
+  top: 56%;
+  left: 52%;
+  color: white;
+  font-size: 16px;
+}
+
+#owner {
+  position: absolute;
+  bottom: 2%;
+  left: 1.5%;
+  font-size: 16px;
+  color: white;
+}
+
+#processing {
+  color: #b510c2;
+  font-size: 19px;
+  position: absolute;
+  top: 9%;
+  left: 40%;
+}
+
+#b_process {
+  color: #b510c2;
+  font-size: 19px;
+  position: absolute;
+  top: 11%;
+  left: 40%;
+}
+
+#con_info {
+  position: absolute;
+  bottom: 2%;
+  right: 1.5%;
+  font-size: 16px;
+  color: white;
+}
+
+#eth_to_lend_label {
+  color: #b510c2;
+  font-size: 20px;
+}
+
+button#\'close {
+  position: absolute;
+  padding: 10px 60px;
+  border-radius: 30px;
+  font-size: 16px;
+  border: none;
+  color: white;
+  background-color: #cc65d7;
+  top: 82%;
+  left: 71%;
+}
+#borrow_label {
+  color: #b510c2;
+  font-size: 20px;
+}
+
+#borrow_eth_amount {
+  font-size: 16px;
+  width: 167px;
+  height: 25px;
+}
+
+#slider_label {
+  font-size: 20px;
+  color: #b510c2;
+}
+
+span#borrow_info {
+  color: white;
+  font-size: 20px;
+  position: ABSOLUTE;
+  left: 33%;
+  top: 101%;
+}
+
+p#e_rate_label {
+  text-decoration: underline;
+}
+
+p#e_rate {
+  position: absolute;
+  left: 17px;
+}
+
+div#rate {
+  color: white;
+  font-size: 18px;
+  top: 36%;
+  position: absolute;
+  left: 45%;
+}
+
+#rate_note {
+  color: rgb(181, 16, 194);
+  font-size: 14px;
+  position: absolute;
+  top: 70%;
+  left: 28%;
+}
+
+p#rate_note_b {
+  color: rgb(181, 16, 194);
+  position: absolute;
+  left: 32%;
+  top: 73%;
+}
+
+/* Add more styles for the rest of your HTML content here */

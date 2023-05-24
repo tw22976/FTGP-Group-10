@@ -1,0 +1,150 @@
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("Assets/background1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Add this property to fix the background image */
+  }
+  
+  /* Header styles */
+  #header_div {
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+  }
+  
+  #name {
+    font-size: 60px;
+    color: #ffffff;
+    margin: 0;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  #Connect {
+    font-size: 18px;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: white;
+    color: #9306c2;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  
+  #Connect:hover {
+    background-color: #e69bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  #Connect:active {
+    transform: scale(0.92);
+  }
+  
+  #ConnectedText {
+    font-size: 24px;
+    color: #ffffff;
+    position: absolute;
+    right: 20px;
+  }
+  
+  #profile {
+    font-size: 20px;
+    width: 180px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: white;
+    color: #000000;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    line-height: 20px;
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    right: 20px;
+    top: 50px;
+  }
+  
+  #profile:hover {
+    background-color: #e69bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  #profile:active {
+    transform: scale(0.92);
+  }
+  
+  #lend_amt {
+    width: 10%;
+    box-sizing: border-box;
+    margin-top: 400px;
+    margin-left: 600px;
+  }
+  
+  #data {
+    margin-top: 200px;
+    position: relative;
+  }
+  
+  #lend_amount {
+    margin-left: 600px;
+  }
+  
+  #lender_interest_button {
+    margin-top: 10px;
+    margin-left: 700px;
+  }
+  
+  #lender_withdraw_interest {
+    margin-top: 10px;
+    margin-left: 650px;
+  }
+  
+  #withdraw_amt_input {
+    margin-top: 10px;
+    margin-left: 650px;
+  }
+  
+  #user_data {
+    margin-top: 10px;
+    margin-left: 700px;
+  }
+  
+  #lender_profile_list{
+    margin-top: 10px;
+    margin-left: 700px;
+    color: #ffffff;
+  }
+  
+  #borrower{
+    margin-top: 100px;
+    margin-left: 600px;
+  }
+  
+  #borrow_rep_use{
+    margin-top: 10px;
+  }
+  
+  #borrow_eth{
+    margin-top: 10px;
+    margin-left: 150px;
+  }
+  
+  #pay_both{
+    margin-top: 10px;
+  }
+  
+  /* Add more styles for the rest of your HTML content here */
+  
