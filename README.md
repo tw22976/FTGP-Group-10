@@ -1,4 +1,4 @@
-# Repository Name
+# DefiDuo
 
 This repository contains the source code for the lending platform, including frontend files, backend contracts, and testing files.
 
