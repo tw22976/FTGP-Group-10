@@ -7,7 +7,8 @@ This repository contains the source code for the lending platform, including fro
 ## Description
 
 The lending platform is designed to facilitate lending transactions between lenders and borrowers. It includes a frontend user interface implemented using JavaScript, HTML, and CSS. The backend logic is implemented in a Solidity contract named `Backend.sol`, which provides functions for lenders and borrowers to interact with the platform. Additionally, the collateral token functionality is implemented in an ERC-20 contract named `CollateralToken.sol`.
-**For a visual demonstration of the lending platform, you can watch this** [YouTube video](https://www.youtube.com/watch?v=NRF62IfZoIA).
+
+###For a visual demonstration of the lending platform, you can watch this [YouTube video](https://www.youtube.com/watch?v=NRF62IfZoIA).
 
 ## File Structure
 
